@@ -1,19 +1,19 @@
-import { Component } from '../component/componen.js';
-import { Navbar } from '../component/navbar.js';
-import { Footer } from '../component/footer.js';
+import { Page } from '../component/page.js';
 
-export class Kontak extends Component {
-    render() {
-        const navbar = new Navbar({ namaSekolah: 'SMK YADIKA SOREANG - Kontak' }).render();
-        const footer = new Footer().render();
+export class Kontak extends Page {
+    constructor() {
+        super({
+            namaSekolah: 'SMK YADIKA SOREANG - Kontak',
+            activePage: 'kontak',
+        });
+    }
 
+    renderContent() {
         return `
-            ${navbar}
-            <main>
-                <h1>Kontak</h1>
-                <p>Hubungi kami melalui email atau nomor telepon yang tersedia di sekolah.</p>
-            </main>
-            ${footer}
+        <main>
+            <h1>Kontak Kami</h1>
+            <p>Hubungi kami melalui email atau nomor telepon yang tersedia di sekolah.</p>
+        </main>
         `;
     }
 }
